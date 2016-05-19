@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:200' rel='stylesheet' type='text/css'>
+    <title> {title} </title>
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            background-color: #ffccff;
+        }
+        
+        .nav {
+            width: 425px;
+            height: 2000px;
+            background-color: black;
+            float: right;
+            position: fixed;
+            z-index: 9999999;
+            margin-right: 100px;
+            margin-top: -10px;
+        }
+        
+        h1 {
+            font-family: 'Dosis', sans-serif;
+            font-size: 60pt;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        h2 {
+            font-family: 'Dosis', sans-serif;
+            font-size: 12pt;
+            color: white;
+            text-align: right;
+            margin-top: -40px;
+            margin-left: 50px;
+            margin-right: 65px;
+        }
+        
+        h3 {
+            font-family: 'Dosis', sans-serif;
+            font-size: 60pt;
+            color: white;
+        }
+        
+        p {
+            font-family: 'Dosis', sans-serif;
+            font-size: 20pt;
+            color: white;
+            margin-top: -70px;
+        }
+        
+        .move {
+            padding: 50px;
+        }
+        
+        
+        .navimg {
+            width: 150px;
+            height: 150px;
+            margin-top: 30px;
+            margin-left: 135px;
+        }
+        
+        .post {
+            margin-top: -10px;
+            width:500px;
+            height: 500px;
+            background-color: #ffccff;
+            float: right;
+        }
+        
+        .main { 
+            width: 100%;
+            height:100%;
+            float: center;
+        }
+        
+        img {
+            height: auto;
+        }
+        
+        .text {
+            float: left;
+            margin-left: 600px;
+            font-family: 'Dosis', sans-serif;
+            font-size: 12pt;
+            text-align: left;
+        }
+        
+        .nava {
+            float: right;
+            text-align: right;
+            margin: 70px;
+            
+        }
+        
+        a {
+            color: #ffccff;
+            text-decoration: none;
+            font-family: 'Dosis', sans-serif;
+            font-size: 20pt;
+            line-height: 30pt;
+
+        }
+        
+        a hover {
+            color: black;
+            background-color: white;
+        }
+        
+        
+    </style>
+
+</head>
+
+<header class="nav">
+
+    <img class="navimg" src="{favicon}">
+
+    <h1>{title} </h1>
+    <h2> {description} </h2>
+    
+    <section class="nava">
+    <a href="http://des117.blogspot.com/">DES 117</a> <br>
+    <a href="https://naftyaaa.tumblr.com/credit">CREDIT</a> <br>
+    <a href="http://cargocollective.com/thundercat">PORTFOLIO</a> <br>
+</section>
+
+</header>
+
+<body>
+
+    <div class="main">
+
+        {block:Posts inlineMediaWidth="300"} 
+        
+        <div class="post">
+       
+       {block:Photo}
+        <a href="{permalink}"><img src="{PhotoURL-500}" width="500" /></a>
+       {/block:Photo}
+       
+       <section class="move">
+       <h3>{block:Title}{Title}{/block:Title}</h3>  
+       <p> {block:Text}{Body}{/block:Text} </p>
+       </section>
+        </div>
+        
+        {/block:Posts}
+        
+    
+
+    </div>
+
+    <div>
+        {block:Pagination} {block:PreviousPage} {PreviousPage} {/block:PreviousPage} {block:NextPage} {NextPage} {/block:NextPage} {/block:Pagination}
+
+    </div>
+
+</body>
+
+
+</html>
